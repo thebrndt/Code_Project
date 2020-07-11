@@ -1,3 +1,4 @@
+// Defining all data needed, that will be used in the slides.
 class SliderModel {
   String imagePath;
   String title;
@@ -30,33 +31,34 @@ class SliderModel {
   }
 }
 
+// Information on slides that are used in SliderTile class in main.dart file.
 List<SliderModel> getSlides() {
   List<SliderModel> slides = new List<SliderModel>();
   SliderModel sliderModel = new SliderModel();
 
-  // 1
+  // Page 1 of the Slides.
   sliderModel.setImageAssetPath('assets/call.png');
-  sliderModel.setTitle('Simply Call');
+  sliderModel.setTitle('Dial');
   sliderModel.setDescription(
       'Quickly call any emergency service you might need. Simple and hassle-free.');
   slides.add(sliderModel);
 
   sliderModel = new SliderModel();
 
-  // 2
+  // Page 2 of the Slides.
   sliderModel.setImageAssetPath('assets/security.png');
-  sliderModel.setTitle('Stay Private');
+  sliderModel.setTitle('Privacy');
   sliderModel.setDescription(
       'The app does not collect any personal information.\nEver.');
   slides.add(sliderModel);
 
   sliderModel = new SliderModel();
 
-  // 3
+  // Page 3 of the Slides.
   sliderModel.setImageAssetPath('assets/offline.png');
-  sliderModel.setTitle('Be Free');
+  sliderModel.setTitle('Offline');
   sliderModel.setDescription(
-      'This app works offline! No need for an active internet connection.');
+      'This app does not need an active internet connection to work!');
   slides.add(sliderModel);
 
   sliderModel = new SliderModel();

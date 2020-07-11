@@ -1,5 +1,6 @@
-import './data/data.dart';
 import 'package:flutter/material.dart';
+import './data/data.dart';
+import './dial.dart';
 
 // Start of App
 void main() {
@@ -10,8 +11,9 @@ class DASApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "App Onboarding",
+      title: 'App Onboarding',
       home: Home(),
+      routes: <String, WidgetBuilder>{'/DialPage': (context) => DialPage()},
       debugShowCheckedModeBanner: false,
     );
   }
@@ -69,6 +71,8 @@ class _HomeState extends State<Home> {
               color: Colors.white,
               height: 70,
               padding: EdgeInsets.symmetric(horizontal: 30),
+
+// Onboarding Screen Bottom Navigation Items ("Skip", "Next" and "Get Started Now" buttons, page index indicator)
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -97,23 +101,29 @@ class _HomeState extends State<Home> {
                 ],
               ),
             )
-          : Container(
-              alignment: Alignment.center,
-              width: MediaQuery.of(context).size.width,
-              height: 70,
-              color: Colors.deepPurpleAccent,
-              child: Text(
-                'GET STARTED NOW',
-                style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          : GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/DialPage');
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: MediaQuery.of(context).size.width,
+                height: 70,
+                color: Colors.deepPurpleAccent,
+                child: Text(
+                  'GET STARTED NOW',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
               ),
             ),
     );
   }
 }
 
+// Properties for SliderTile containing the information from ./data/data.dart file
 class SliderTile extends StatelessWidget {
-  String imageAssetPath, title, description;
+  final String imageAssetPath, title, description;
   SliderTile({this.imageAssetPath, this.title, this.description});
 
   @override
