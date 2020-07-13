@@ -1,4 +1,7 @@
 // Defining all data needed, that will be used in the slides.
+import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+
 class SliderModel {
   String imagePath;
   String title;
@@ -49,7 +52,7 @@ List<SliderModel> getSlides() {
   sliderModel.setImageAssetPath('assets/security.png');
   sliderModel.setTitle('Privacy');
   sliderModel.setDescription(
-      'The app does not collect any personal information.\nEver.');
+      'None of your personal information or data is collected.\nEver.');
   slides.add(sliderModel);
 
   sliderModel = new SliderModel();
@@ -57,11 +60,21 @@ List<SliderModel> getSlides() {
   // Page 3 of the Slides.
   sliderModel.setImageAssetPath('assets/offline.png');
   sliderModel.setTitle('Offline');
-  sliderModel.setDescription(
-      'This app does not need an active internet connection to work!');
+  sliderModel.setDescription('No need for an active internet connection!');
   slides.add(sliderModel);
 
   sliderModel = new SliderModel();
 
   return slides;
 }
+
+List<BoxShadow> shadowList = [
+  BoxShadow(color: Colors.grey[300], blurRadius: 30, offset: Offset(0, 10))
+];
+
+List<Map> categories = [
+  {'name': 'Authorities', 'iconPath': 'assets/authorities.png'},
+  {'name': 'Health', 'iconPath': 'assets/health.png'},
+  {'name': 'Fire', 'iconPath': 'assets/fire.png'},
+  {'name': 'Social\nServices', 'iconPath': 'assets/social.png'},
+];

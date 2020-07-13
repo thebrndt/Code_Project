@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './data/data.dart';
-import './dial.dart';
+import 'dialPage.dart';
 
 // Start of App
 void main() {
