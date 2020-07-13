@@ -1,6 +1,6 @@
 # Code_Project
 
-This is a project I am working on for the CODE University application challenge. I am doing this project in response to a recent wave of unreported crime in my country and hopefuly this will reduce some of the friction required for people to actually report crimes.
+This is a project I am working on for the CODE University application challenge. I am doing this project in response to the fact that a lot of Namibian citizens are unaware of different government services available. There is no digital directory and the numbers are quite long, so as a result a lot of services aren't made use unless people physically look them up in a telephone directory. Which is what I had to do, so others won't have to.
 
 ## Planned Features
 
