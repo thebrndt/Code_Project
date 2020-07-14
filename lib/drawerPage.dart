@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import './main.dart';
-import './dialPage.dart';
 
 class DrawerPage extends StatefulWidget {
   @override

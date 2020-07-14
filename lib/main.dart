@@ -60,9 +60,9 @@ class _HomeState extends State<Home> {
         },
         itemBuilder: (context, index) {
           return SliderTile(
-            imageAssetPath: slides[index].getImageAssetPath(),
-            title: slides[index].getTitle(),
-            description: slides[index].getDescription(),
+            imageAssetPath: slides[index].imagePath,
+            title: slides[index].title,
+            description: slides[index].description,
           );
         },
       ),
@@ -76,8 +76,8 @@ class _HomeState extends State<Home> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  GestureDetector(
-                      onTap: () {
+                  FlatButton(
+                      onPressed: () {
                         pageController.animateToPage(slides.length - 1,
                             duration: Duration(milliseconds: 400),
                             curve: Curves.linear);
@@ -91,8 +91,8 @@ class _HomeState extends State<Home> {
                             : pageIndexIndicator(false)
                     ],
                   ),
-                  GestureDetector(
-                      onTap: () {
+                  FlatButton(
+                      onPressed: () {
                         pageController.animateToPage(currentIndex + 1,
                             duration: Duration(milliseconds: 400),
                             curve: Curves.linear);
@@ -101,15 +101,15 @@ class _HomeState extends State<Home> {
                 ],
               ),
             )
-          : GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/DialPage');
-              },
-              child: Container(
-                alignment: Alignment.center,
-                width: MediaQuery.of(context).size.width,
-                height: 70,
+          : SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: 70,
+              child: FlatButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/DialPage');
+                },
                 color: Colors.deepPurpleAccent,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
                 child: Text(
                   'GET STARTED NOW',
                   style: TextStyle(
