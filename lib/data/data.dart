@@ -1,7 +1,3 @@
-// Defining all data needed, that will be used in the slides.
-import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-
 class SliderModel {
   String imagePath;
   String title;
@@ -39,10 +35,6 @@ List<SliderModel> getSlides() {
 
   return slides;
 }
-
-List<BoxShadow> shadowList = [
-  BoxShadow(color: Colors.grey[300], blurRadius: 30, offset: Offset(0, 10))
-];
 
 List<Map> categories = [
   {'name': 'Authorities', 'iconPath': 'assets/authorities.png'},
