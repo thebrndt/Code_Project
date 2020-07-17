@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+import './data/num_auth.dart';
+import './data/num_health.dart';
+import './data/num_fire.dart';
+import './data/num_socSer.dart';
+
 // DialPage widget builder
 class DialPage extends StatefulWidget {
   @override
@@ -43,13 +48,16 @@ class _DialPageState extends State<DialPage> {
               ).toList(),
             ),
           ),
-          body: TabBarView(
-            children: choices.map((Choice choice) {
-              return Padding(
-                padding: const EdgeInsets.all(15),
-                child: ChoicePage(choice: choice),
-              );
-            }).toList(),
+          body: Container(
+            color: Colors.white70,
+            child: TabBarView(
+              children: <Widget>[
+                Tab(child: AuthoritiesTab()),
+                Tab(child: HealthTab()),
+                Tab(child: FireTab()),
+                Tab(child: SocialServiceTab()),
+              ],
+            ),
           ),
         ),
       ),
@@ -78,7 +86,7 @@ class ChoicePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextStyle textStyle = Theme.of(context).textTheme.headline1;
     return Card(
-      color: Colors.white,
+      color: Colors.deepPurpleAccent,
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
