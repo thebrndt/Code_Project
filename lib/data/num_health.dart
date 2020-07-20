@@ -19,6 +19,7 @@ class _HealthTabState extends State<HealthTab> {
       child: ListView(
         scrollDirection: Axis.vertical,
         children: <Widget>[
+// All the numbers and their functionality included in the Health category of the app's tabs.
           Container(
               padding: EdgeInsets.only(top: 20, left: 15, right: 15),
               child: RaisedButton(
